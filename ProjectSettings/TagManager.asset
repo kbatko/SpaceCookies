@@ -13,11 +13,11 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - PowerUps
+  - Comets
+  - Background
+  - Planet
   - 
   - 
   - 
@@ -40,4 +40,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 942221731
+    locked: 0
+  - name: Player
+    uniqueID: 3103047945
+    locked: 0
+  - name: PowerUps
+    uniqueID: 2810026395
+    locked: 0
+  - name: Comets
+    uniqueID: 738091131
     locked: 0
