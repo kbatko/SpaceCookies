@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114303382885154634}
   - component: {fileID: 95339408150961270}
   - component: {fileID: 70613417596020456}
-  - component: {fileID: 114585058132746000}
+  - component: {fileID: 114222827384824140}
   m_Layer: 10
   m_Name: comet
   m_TagString: Untagged
@@ -114,6 +114,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114222827384824140
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1753657813761972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff1477922e74162448eab2af5b3938c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravityFactor: {x: 1, y: 1}
+  direction: {x: -1, y: 0}
 --- !u!114 &114303382885154634
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -125,19 +138,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 495bf74ec1c66fb4cb7ea22d9287bfcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114585058132746000
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1753657813761972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb7a072fbd133af4794cc8ff299777e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gravityFactor: {x: 1, y: 1}
-  direction: {x: -1, y: 0}
 --- !u!212 &212182087092346444
 SpriteRenderer:
   m_ObjectHideFlags: 1
