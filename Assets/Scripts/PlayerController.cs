@@ -42,7 +42,10 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rotationCounter += Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+        if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        {
+            rotationCounter += Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+        }
         float x = Mathf.Cos(rotationCounter) * radius;
         float y = Mathf.Sin(rotationCounter) * radius;
         float z = 1;
