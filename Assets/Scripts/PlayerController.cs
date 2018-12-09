@@ -5,8 +5,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+    }
 
-	public Vector2 gravityFactor;
+    public Vector2 gravityFactor;
 	public Vector2 direction = new Vector2(-1,0);
 	public float speed = 10.0f;
 	

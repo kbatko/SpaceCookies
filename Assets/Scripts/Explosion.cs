@@ -3,13 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Explosion : MonoBehaviour {
-
+    public int hit_player = 0;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         gameObject.GetComponent<Animator>().enabled = true;
-        
-        Destroy(gameObject,0.5f);
+        if (collision.gameObject.tag == "Player")
+        {
+            //dziala
+            Destroy(collision.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject, 0.5f);
+        }
     }
 
     // Use this for initialization
