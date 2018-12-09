@@ -11,6 +11,9 @@ public class SpawnArena : MonoBehaviour {
     // Szybkosc generowania komet
     public float spawnTime = 2;
 
+    private float nextActionTime = 0.0f;
+    public float period = 10f;
+
     // Use this for initialization
     void Start () {
 
@@ -33,6 +36,11 @@ public class SpawnArena : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        if (Time.time > nextActionTime)
+        {
+            nextActionTime += period;
+            spawnTime *= 0.75f;
+            // execute block of code here
+        }
+    }
 }
