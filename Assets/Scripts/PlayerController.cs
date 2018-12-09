@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour
     {
     }
 
+    //zycie
+    public bool isAlive = true;
+
     public Vector2 gravityFactor;
 	public Vector2 direction = new Vector2(-1,0);
 	public float speed = 10.0f;

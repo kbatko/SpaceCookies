@@ -11,7 +11,10 @@ public class Explosion : MonoBehaviour {
         if (collision.gameObject.tag == "Player")
         {
             //dziala
-            Destroy(collision.gameObject);
+            gameObject.GetComponent<Animator>().enabled = false;
+            gameObject.GetComponent<SpriteRenderer>().sprite = null; 
+            gameObject.GetComponentInChildren<Animator>().enabled = true;
+            Destroy(collision.gameObject,0.50f);
         }
         else
         {
