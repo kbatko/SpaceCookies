@@ -10,16 +10,10 @@ public class Explosion : MonoBehaviour {
         gameObject.GetComponent<Animator>().enabled = true;
         if (collision.gameObject.tag == "Player")
         {
-            //dziala
-            gameObject.GetComponent<Animator>().enabled = false;
-            gameObject.GetComponent<SpriteRenderer>().sprite = null; 
-            gameObject.GetComponentInChildren<Animator>().enabled = true;
-            Destroy(collision.gameObject,0.50f);
+            Destroy(collision.gameObject);
         }
-        else
-        {
+        // umieranie komety
             Destroy(gameObject, 0.5f);
-        }
     }
 
     // Use this for initialization
