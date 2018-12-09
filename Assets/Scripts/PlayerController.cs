@@ -22,8 +22,8 @@ public class PlayerController : MonoBehaviour
 		rb.AddForce(acceleration * rb.mass * gravityFactor); 
 	}
 
-	private void FixedUpdate()
-	{
-		throw new System.NotImplementedException();
-	}
+//	private void FixedUpdate()
+//	{
+//		throw new System.NotImplementedException();
+//	}
 }
