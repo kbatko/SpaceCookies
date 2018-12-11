@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Planet
+  - Player2
+  - Player3
+  - Player4
+  - Player1
+  - GameOverScreen
   layers:
   - Default
   - TransparentFX

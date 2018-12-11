@@ -1,58 +1,40 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using Random = System.Random;
 
 public class PlayerController : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-    }
-
-    //zycie
     public bool isAlive = true;
 
-    public Vector2 gravityFactor;
-	public Vector2 direction = new Vector2(-1,0);
-	public float speed = 10.0f;
-	
-	private Rigidbody2D rb;
-	private GameObject planet;
-	
-	float rotationCounter = 0;
-	public float radius;
-	public float rotation;
+    public Vector3 scale = new Vector3(1, 3, 1);
+    public float speed = 2.0f;
+    
+    GameObject planet;
+    float planetRadius;
+    private float rotationAngle = -(float) new Random().NextDouble();
 
 
-	// Use this for initialization
-	void Start ()
-	{
-		rb = GetComponent<Rigidbody2D>();
-		planet = GameObject.FindGameObjectWithTag("Planet");
-		radius = planet.GetComponent<CircleCollider2D>().radius;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	}
+    // Use this for initialization
+    void Start()
+    {
+        rotationAngle = -(float)new Random().NextDouble();
+        planet = GameObject.FindGameObjectWithTag("Planet");
+        planetRadius = planet.GetComponent<CircleCollider2D>().radius;
+        transform.localScale = scale;
+    }
 
-	private void FixedUpdate()
-	{
-		// gravity
-		Vector2 acceleration = planet.transform.position - this.transform.position;
-//		rb.AddForce(acceleration * rb.mass * gravityFactor); 
-//		// rotation
-		rotation = Vector2.Dot(direction.normalized, acceleration.normalized);
-//		this.transform.Rotate(new Vector3(0, 0, (float)Math.Round(rotation, 1)));
-		//steering
-//		float translation = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-//		transform.Translate(0, translation, 0);
+    private void Update()
+    {
+        Vector2 up = this.transform.position - planet.transform.position;
+        transform.rotation = Quaternion.LookRotation(transform.position, up);
+        
+        if (this.tag == "Player1" && Input.GetButton("Player1Horizontal")) rotationAngle += Input.GetAxis("Player1Horizontal") * speed * Time.deltaTime;
+        if (this.tag == "Player2" && Input.GetButton("Player2Horizontal")) rotationAngle += Input.GetAxis("Player2Horizontal") * speed * Time.deltaTime;
+        if (this.tag == "Player3" && Input.GetButton("Player3Horizontal")) rotationAngle += Input.GetAxis("Player3Horizontal") * speed * Time.deltaTime;
+        if (this.tag == "Player4" && Input.GetButton("Player4Horizontal")) rotationAngle += Input.GetAxis("Player4Horizontal") * speed * Time.deltaTime;
 
-		rotationCounter += Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-		float x = Mathf.Cos (rotationCounter) * radius;
-		float y = Mathf.Sin (rotationCounter) * radius;
-		float z = 0;
-		transform.position = new Vector3(-x, -y, z);
-		transform.Rotate(new Vector3(0, 0, rotation));
-	}
+        float x = Mathf.Cos(rotationAngle) * planetRadius;
+        float y = Mathf.Sin(rotationAngle) * planetRadius;
+        float z = 1;
+        transform.position = new Vector3(-x, y, z);
+    }
 }
