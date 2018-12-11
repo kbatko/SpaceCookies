@@ -18,6 +18,7 @@ public class AsteroidSpawner : MonoBehaviour {
     void Start () {
         // Call the 'addEnemy' function in 0 second
         // Then every 'spawnTime' seconds
+ 
         InvokeRepeating("addEnemy", 0, spawnTime);
     }
 	
@@ -37,6 +38,8 @@ public class AsteroidSpawner : MonoBehaviour {
     void Update () {
         if (Time.time > nextActionTime)
         {
+            
+            
             nextActionTime += period;
             spawnTime *= 0.75f;
             InvokeRepeating("addEnemy", 0, spawnTime);
