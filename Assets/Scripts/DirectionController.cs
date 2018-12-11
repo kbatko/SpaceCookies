@@ -25,7 +25,7 @@ public class DirectionController : MonoBehaviour
 		Vector2 acceleration = planet.transform.position - this.transform.position;
 		rb.AddForce(acceleration * rb.mass * gravityFactor); 
 		// rotation
-		float rotation = Vector2.Dot(direction.normalized, acceleration.normalized);
-		this.transform.Rotate(new Vector3(0, 0, (float)Math.Round(rotation, 1)));
+		//float rotation = Vector2.Dot(direction.normalized, acceleration.normalized);
+		//this.transform.Rotate(new Vector3(0, 0, (float)Math.Round(rotation, 1)));
 	}
 }
